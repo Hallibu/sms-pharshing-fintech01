@@ -1,8 +1,10 @@
 import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { CATEGORIES } from "../types";
 
-// Initialize client - assumes process.env.API_KEY is available
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Safe initialization: checks if process.env exists to avoid crash
+const apiKey = (typeof process !== 'undefined' && process.env) ? process.env.API_KEY : '';
+
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 const MODEL_NAME = "gemini-2.5-flash";
 
@@ -16,6 +18,10 @@ export interface ParsedSmsResult {
 }
 
 export const parseSmsWithGemini = async (smsText: string, senderInfo?: string): Promise<ParsedSmsResult> => {
+  if (!ai) {
+    throw new Error("API Key is missing. Please configure Vercel Environment Variables.");
+  }
+
   try {
     const currentYear = new Date().getFullYear();
     

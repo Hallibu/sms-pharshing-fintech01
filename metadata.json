@@ -1,0 +1,5 @@
+{
+  "name": "SmsExpenseAI",
+  "description": "An intelligent expense tracker that parses SMS messages using Gemini to automatically categorize transactions, track spending, and provide financial analytics.",
+  "requestFramePermissions": []
+}

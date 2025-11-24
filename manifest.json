@@ -1,0 +1,26 @@
+
+{
+  "short_name": "ExpenseAI",
+  "name": "SMS Expense Tracker AI",
+  "description": "Offline-capable expense tracker with AI SMS parsing.",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1077/1077114.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/1077/1077114.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#2563eb",
+  "background_color": "#f3f4f6",
+  "orientation": "portrait"
+}
